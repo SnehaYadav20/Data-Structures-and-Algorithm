@@ -10,14 +10,10 @@ class Solution(object):
 
         if(a==0 or b==0):
             return max(a, b)
-        
-        ans = a
 
-        while ans > 0:
-            if a % ans == 0 and b % ans == 0:
-                break
-            ans -= 1
+        while b:
+            a, b = b, a % b
 
-        return ans
+        return a
         
         
